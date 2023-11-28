@@ -12,19 +12,19 @@
     
             <tr>
                 <td>ชื่อ</td>
-                <td><input type="text"/></td>
+                <td><input id="name-input" type="text"/></td>
             </tr>
             <tr>
                 <td>สกุล</td>
-                <td><input type="text"/></td>
+                <td><input id="surname-input" type="text"/></td>
             </tr>
             <tr>
                 <td>วัน/เดือน/ปีเกิด</td>
-                <td><input type="date"/></td>
+                <td><input id="birthdate-input" type="date"/></td>
             </tr>
             <tr>
                 <td>อายุ</td>
-                <td><input type="text"/></td>
+                <td><input id="age-input" type="text"/></td>
             </tr>
             <tr>
                 <td>เพศ</td>
@@ -41,7 +41,7 @@
             </tr>
             <tr>
                 <td>รูป</td>
-                <td><input name="user-pic" id="user-pic-flie" type="file"/>
+                <td><input name="user-pic" id="user-pic-flie" type="file" accept="image/*"/>
                 </td>
             </tr>
             <tr>
@@ -80,7 +80,7 @@
         <input id="user-accepted-checkbox" type="checkbox"/>
         <label for="user-accepted-checkbox">ยินยอมให้เก็บข้อมูล</label>
         <br><br>
-        <input type="reset" name="reset" id="reset-button" value="Reset" /> <input type="submit" name="submit" id="submit-button"value="Submit" style="margin-left: 145px;">
+        <input type="reset" name="reset" id="reset-button" value="Reset" /> <input type="submit" name="submit" id="submit-button"value="Submit" style="margin-left: 145px;" onclick="showSubmitData()">
 
     </form>
     <script>
@@ -90,6 +90,29 @@
         }
         function checkRadio(idInput){
             document.getElementById(idInput).checked = true;
+        }
+        function getGenderFromRadio(){
+            var gender;
+            if(document.getElementById('etc-gender-radio').checked == true){
+                gender = document.getElementById('etc-gender-text').value;
+            }
+            else if(document.getElementById('male-radio').checked == true){
+                gender = document.getElementById('male-radio').value;
+            }else if(document.getElementById('female-radio').checked == true){
+                gender = document.getElementById('female-radio').value;
+            }else if(document.getElementById('none-radio').checked == true){
+                gender = document.getElementById('none-radio').value;
+            }
+            return gender;
+        }
+        function showSubmitData(){
+            var gender = getGenderFromRadio();
+            var favColor = document.getElementById('fav-color-select').value;
+            alert('ข้อมูลส่วนตัวของคุณมีดังนี้\n'+
+            'ชื่อ-สกุล : '+document.getElementById('name-input').value +' '+document.getElementById('surname-input').value
+            +'\nวัน/เดือน/ปีเกิด : '+document.getElementById('birthdate-input').value
+            +'\nอายุ : '+document.getElementById('age-input').value
+            +'\nเพศ : '+gender+'\nสีที่ชอบ : '+favColor)
         }
     
     </script>
