@@ -3,73 +3,151 @@
 <head>
     <title>HTML - FORM </title>
     <meta charset="utf-8"/>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="web-header-logo">
+    <img class="dogeImg" width="150" height="150" src="https://i.redd.it/yugz2apjanp41.png"alt=""/>
     <h1>Workshop #HTML - FORM.</h1>
-    <img width="150" height="150" src="https://i.redd.it/yugz2apjanp41.png"alt="">
-    <br><br>
-    <docshit>This is Dog.</docshit>
-    <p>This is a paragarph</p>
-    <thaitext>พาสาไทญ</thaitext>
-    <ul>
-        <li>A</li>
-        <li>B</li>
-        <li>C</li>
-    </ul>
-    <ol>  
-        <li>A</li>
-        <li>B</li>
-        <li>C</li>
-    </ol>
-    <ol type="I">  
-        <li>A</li>
-        <li>B</li>
-        <li>C</li>
-    </ol>
-    <dl>
-        <dt>Group I</dt>
-        <dd>A</dd>
-        <dt>Group II</dt>
-        <dd>B</dd>
-        <dt>Group III</dt>
-        <dd>C</dd>
-    </dl>
-    <img width="150" height="150" src="https://i.redd.it/yugz2apjanp41.png"alt="">
-    <h2 style="font-size: xx-large;"> ปล่อยชั้นไปกินชาบู เดี๋ยวนี้!!</h2>
-    <table width="100%" border="1">
-        <thead>
+    </div> 
+    <img class="body-background" src="https://images.pexels.com/photos/3826435/pexels-photo-3826435.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""/>
+    <div class="user-information-form">
+    <form id="information-form" action="#">
+        <table >
             <tr>
-                <td>#</td>
-                <td>Name Head</td>
+                <td>ชื่อ</td>
+                <td><input id="name-input" type="text"/></td>
             </tr>
+            <tr>
+                <td>สกุล</td>
+                <td><input id="surname-input" type="text"/></td>
+            </tr>
+            <tr>
+                <td>วัน/เดือน/ปีเกิด</td>
+                <td><input id="birthdate-input" type="date"/></td>
+            </tr>
+            <tr>
+                <td>อายุ</td>
+                <td><input id="age-input" type="text"/></td>
+            </tr>
+            <tr>
+                <td>เพศ</td>
+                <td>
+                    <input id ="male-radio" type="radio"name="gender" value="ชาย" onclick="clearField('etc-gender-text')"/>
+                    <label for="male-radio">ชาย</label>
+                    <input id ="female-radio" type="radio" name="gender" value="หญิง" onclick="clearField('etc-gender-text')"/>
+                    <label for="female-radio">หญิง</label>
+                    <input id ="none-radio" type="radio" name="gender" value="ไม่ระบุ" onclick="clearField('etc-gender-text')"/>
+                    <label for="none-radio">ไม่ระบุ</label>
+                    <input id = "etc-gender-radio" type="radio" name="gender" value="etc-gender-text"/>
+                    <label for="etc-gender-radio">อื่นๆ <input id="etc-gender-text" type="text" placeholder="กรุณาระบุ" onclick="checkRadio('etc-gender-radio')"/></label>
+                </td>                    
+            </tr>
+            <tr>
+                <td>รูป</td>
+                <td><input name="user-pic" id="user-pic-flie" type="file" accept="image/*"/>
+                </td>
+            </tr>
+            <tr>
+                <td>ที่อยู่</td>
+                <td><textarea name="address" id="address-textarea" cols="30" rows="7" placeholder="กรุณาป้อนข้อมูลที่อยู่"></textarea></td>
+            </tr>
+            <tr>
+                <td>สีที่ชอบ</td>
+                <td><select name="fav-color" id="fav-color-select">
+                <option disabled selected value="-">-</option>
+                <option value="สีแดง">สีแดง</option>
+                <option value="สีฟ้า">สีฟ้า</option>
+                <option value="สีเขียว">สีเขียว</option>
+                <option value="สีเหลือง">สีเหลือง</option>
+                <option value="สีดำ">สีดำ</option>
+                <option value="สีขาว">สีขาว</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td>แนวแพลงที่ชอบ</td>
+                <td>
+                <input id="country-music-radio" type="radio" name="fav-music" value="เพื่อชีวิต" onclick="clearField('etc-music-text')"/>
+                <label for="country-music-radio">เพื่อชีวิต</label>
+                <input id="folk-music-radio" type="radio" name="fav-music" value="ลูกทุ่ง"onclick="clearField('etc-music-text')"/>
+                <label for="folk-music-radio">ลูกทุ่ง</label>
+                <input id="etc-music-radio" type="radio" name="fav-music"/>
+                <label for="etc-music-radio">อื่นๆ <input id="etc-music-text" type="text" placeholder="กรุณาระบุ" onclick="checkRadio('etc-music-radio')"></label>
+                </td>
+            </tr>
+            <tr>
+                <br>
+            </tr>
+        </table>
+        <div class="form-footer">
+        <br>
+        <input id="user-accepted-checkbox" type="checkbox"/>
+        <label for="user-accepted-checkbox">ยินยอมให้เก็บข้อมูล</label>
+        <br><br>
+        <input class = "reset-button" type="reset" name="reset" id="reset-button" value="Reset" style="margin-left: 130px;"/> 
+        <input class = "submit-button"type="button" name="submit" id="submit-button"value="Submit" style="margin-left: 145px;" onclick="submitData()">
+        <br><br>
+        </div>
+    </form>
+    </div>
+    <script>
+        function clearField(idInput)
+        {
+            document.getElementById(idInput).value='';
+        }
+        function checkRadio(idInput){
+            document.getElementById(idInput).checked = true;
+        }
+        function getGenderFromRadio(){
+            var gender;
+            if(document.getElementById('etc-gender-radio').checked == true){
+                gender = document.getElementById('etc-gender-text').value;
+            }
+            else if(document.getElementById('male-radio').checked == true){
+                gender = document.getElementById('male-radio').value;
+            }else if(document.getElementById('female-radio').checked == true){
+                gender = document.getElementById('female-radio').value;
+            }else if(document.getElementById('none-radio').checked == true){
+                gender = document.getElementById('none-radio').value;
+            }
+            return gender;
+        }
+        function getFavMusicFromRadio(){
+            var music;
+            if(document.getElementById('etc-music-radio').checked == true){
+                music = document.getElementById('etc-music-text').value;
+            }
+            else if(document.getElementById('country-music-radio').checked == true){
+                music = document.getElementById('country-music-radio').value;
+            }else if(document.getElementById('folk-music-radio').checked == true){
+                music = document.getElementById('folk-music-radio').value;
+            }
+            return music;
+        }
+        function submitData(){
+            if(document.getElementById('user-accepted-checkbox').checked == 1){
+                showSubmitData();
+                document.getElementById("information-form").submit();
+            
+            }else{
+                alert('กรุณาให้ความยินยอมในการเก็บข้อมูล');
+            }
+    
+        }
 
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>A</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>B</td>
-            </tr>
-            <tr>
-                <td colspan="2">2 </td>
-            </tr>
-            <tr>
-                <td rowspan="2">4 </td>
-            </tr>
-            <tr>
-                <td>3 </td>
-            </tr>
-
-        </tbody>
-        <tfoot>
-            <tr>
-                <td>#</td>
-                <td>Name Head</td>
-            </tr>
-
-        </tfoot>
-    </table>
+        function showSubmitData(){
+            var name = document.getElementById('name-input').value;
+            var surname = document.getElementById('surname-input').value;
+            var birthdate = document.getElementById('birthdate-input').value;
+            var age = document.getElementById('age-input').value;
+            var gender = getGenderFromRadio();
+            var favColor = document.getElementById('fav-color-select').value;
+            var favMusic = getFavMusicFromRadio();
+            var address = document.getElementById('address-textarea').value;
+            alert('ข้อมูลส่วนตัวของคุณมีดังนี้'+'\nชื่อ-สกุล : '+name +' '+surname
+            +'\nวัน/เดือน/ปีเกิด : '+birthdate+'\nอายุ : '+ age+'\nเพศ : '+gender+'\nสีที่ชอบ : '+favColor+'\nแนวแพลงที่ชอบ : '+favMusic+'\nที่อยู่ : '+address)
+        }
+    
+    </script>
+</body>
 </html>
