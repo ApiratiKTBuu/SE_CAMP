@@ -9,6 +9,7 @@
     <img width="150" height="150" src="https://i.redd.it/yugz2apjanp41.png"alt="">
     <form id="information-form" action="#">
         <table >
+    
             <tr>
                 <td>ชื่อ</td>
                 <td><input type="text"/></td>
@@ -28,24 +29,69 @@
             <tr>
                 <td>เพศ</td>
                 <td>
-                    <input id ="men-radio" type="radio"
-                    name="gender"/>
-                    <label for="men-radio">ชาย</label>
-                    <input id ="women-radio" type="radio"
-                    name="gender"/>
-                    <label for="women-radio">หญิง</label>
-                    <input id ="none-radio" type="radio"
-                    name="gender" onclick=""/>
+                    <input id ="male-radio" type="radio"name="gender" value="ชาย" onclick="clearField('etc-gender-text')"/>
+                    <label for="male-radio">ชาย</label>
+                    <input id ="female-radio" type="radio" name="gender" value="หญิง" onclick="clearField('etc-gender-text')"/>
+                    <label for="female-radio">หญิง</label>
+                    <input id ="none-radio" type="radio" name="gender" value="ไม่ระบุ" onclick="clearField('etc-gender-text')"/>
                     <label for="none-radio">ไม่ระบุ</label>
-                    <input id = "etc-radio" type="radio"
-                    name="gender" />
-                    <label for="etc-radio">อื่นๆ<input id="etc-gender-text" type="text" onclick=""/></label>
-                    
+                    <input id = "etc-gender-radio" type="radio" name="gender" value="etc-gender-text"/>
+                    <label for="etc-gender-radio">อื่นๆ <input id="etc-gender-text" type="text" placeholder="กรุณาระบุ" onclick="checkRadio('etc-gender-radio')"/></label>
                 </td>                    
+            </tr>
+            <tr>
+                <td>รูป</td>
+                <td><input name="user-pic" id="user-pic-flie" type="file"/>
+                </td>
+            </tr>
+            <tr>
+                <td>ที่อยู่</td>
+                <td><textarea name="address" id="address-textarea" cols="30" rows="7" placeholder="กรุณาป้อนข้อมูลที่อยู่"></textarea></td>
+            </tr>
+            <tr>
+                <td>สีที่ชอบ</td>
+                <td><select name="fav-color" id="fav-color-select">
+                <option disabled selected value="-">-</option>
+                <option value="สีแดง">สีแดง</option>
+                <option value="สีฟ้า">สีฟ้า</option>
+                <option value="สีเขียว">สีเขียว</option>
+                <option value="สีเหลือง">สีเหลือง</option>
+                <option value="สีดำ">สีดำ</option>
+                <option value="สีขาว">สีขาว</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td>แนวแพลงที่ชอบ</td>
+                <td>
+                <input id="country-song-radio" type="radio" name="fav-music" value="เพื่อชีวิต" onclick="clearField('fav-music-text')"/>
+                <label for="country-song-radio">เพื่อชีวิต</label>
+                <input id="folk-song-radio" type="radio" name="fav-music" value="ลูกทุ่ง"onclick="clearField('fav-music-text')"/>
+                <label for="folk-song-radio">ลูกทุ่ง</label>
+                <input id="etc-song-radio" type="radio" name="fav-music" value=""/>
+                <label for="etc-song-radio">อื่นๆ <input id="fav-music-text" type="text" placeholder="กรุณาระบุ" onclick="checkRadio('etc-song-radio')"></label>
+                </td>
+            </tr>
+            <tr>
+                <br>
             </tr>
         </table>
         
-        
+        <br>
+        <input id="user-accepted-checkbox" type="checkbox"/>
+        <label for="user-accepted-checkbox">ยินยอมให้เก็บข้อมูล</label>
+        <br><br>
+        <input type="reset" name="reset" id="reset-button" value="Reset" /> <input type="submit" name="submit" id="submit-button"value="Submit" style="margin-left: 145px;">
 
     </form>
+    <script>
+        function clearField(idInput)
+        {
+            document.getElementById(idInput).value='';
+        }
+        function checkRadio(idInput){
+            document.getElementById(idInput).checked = true;
+        }
+    
+    </script>
+</body>
 </html>
