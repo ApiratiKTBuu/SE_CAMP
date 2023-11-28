@@ -6,10 +6,11 @@
 </head>
 <body>
     <h1>Workshop #HTML - FORM.</h1>
-    <img width="150" height="150" src="https://i.redd.it/yugz2apjanp41.png"alt="">
+    <img width="150" height="150" src="https://media.tenor.com/w_5Q79dNCh8AAAAd/cat-vibe.gif"alt="" />
+    <img width="150" height="150" src="https://i.redd.it/yugz2apjanp41.png"alt="" style="margin-left: 100px;"/>
+    <div class="user-information-form">
     <form id="information-form" action="#">
         <table >
-    
             <tr>
                 <td>ชื่อ</td>
                 <td><input id="name-input" type="text"/></td>
@@ -63,12 +64,12 @@
             <tr>
                 <td>แนวแพลงที่ชอบ</td>
                 <td>
-                <input id="country-song-radio" type="radio" name="fav-music" value="เพื่อชีวิต" onclick="clearField('fav-music-text')"/>
-                <label for="country-song-radio">เพื่อชีวิต</label>
-                <input id="folk-song-radio" type="radio" name="fav-music" value="ลูกทุ่ง"onclick="clearField('fav-music-text')"/>
-                <label for="folk-song-radio">ลูกทุ่ง</label>
-                <input id="etc-song-radio" type="radio" name="fav-music" value=""/>
-                <label for="etc-song-radio">อื่นๆ <input id="fav-music-text" type="text" placeholder="กรุณาระบุ" onclick="checkRadio('etc-song-radio')"></label>
+                <input id="country-music-radio" type="radio" name="fav-music" value="เพื่อชีวิต" onclick="clearField('etc-music-text')"/>
+                <label for="country-music-radio">เพื่อชีวิต</label>
+                <input id="folk-music-radio" type="radio" name="fav-music" value="ลูกทุ่ง"onclick="clearField('etc-music-text')"/>
+                <label for="folk-music-radio">ลูกทุ่ง</label>
+                <input id="etc-music-radio" type="radio" name="fav-music"/>
+                <label for="etc-music-radio">อื่นๆ <input id="etc-music-text" type="text" placeholder="กรุณาระบุ" onclick="checkRadio('etc-music-radio')"></label>
                 </td>
             </tr>
             <tr>
@@ -80,9 +81,10 @@
         <input id="user-accepted-checkbox" type="checkbox"/>
         <label for="user-accepted-checkbox">ยินยอมให้เก็บข้อมูล</label>
         <br><br>
-        <input type="reset" name="reset" id="reset-button" value="Reset" /> <input type="submit" name="submit" id="submit-button"value="Submit" style="margin-left: 145px;" onclick="showSubmitData()">
+        <input type="reset" name="reset" id="reset-button" value="Reset" /> <input type="button" name="submit" id="submit-button"value="Submit" style="margin-left: 145px;" onclick="submitData()">
 
     </form>
+    </div>
     <script>
         function clearField(idInput)
         {
@@ -105,14 +107,40 @@
             }
             return gender;
         }
+        function getFavMusicFromRadio(){
+            var music;
+            if(document.getElementById('etc-music-radio').checked == true){
+                music = document.getElementById('etc-music-text').value;
+            }
+            else if(document.getElementById('country-music-radio').checked == true){
+                music = document.getElementById('country-music-radio').value;
+            }else if(document.getElementById('folk-music-radio').checked == true){
+                music = document.getElementById('folk-music-radio').value;
+            }
+            return music;
+        }
+        function submitData(){
+            if(document.getElementById('user-accepted-checkbox').checked == 1){
+                showSubmitData();
+                document.getElementById("information-form").submit();
+            
+            }else{
+                alert('กรุณาให้ความยินยอมในการเก็บข้อมูล');
+            }
+    
+        }
+
         function showSubmitData(){
+            var name = document.getElementById('name-input').value;
+            var surname = document.getElementById('surname-input').value;
+            var birthdate = document.getElementById('birthdate-input').value;
+            var age = document.getElementById('age-input').value;
             var gender = getGenderFromRadio();
             var favColor = document.getElementById('fav-color-select').value;
-            alert('ข้อมูลส่วนตัวของคุณมีดังนี้\n'+
-            'ชื่อ-สกุล : '+document.getElementById('name-input').value +' '+document.getElementById('surname-input').value
-            +'\nวัน/เดือน/ปีเกิด : '+document.getElementById('birthdate-input').value
-            +'\nอายุ : '+document.getElementById('age-input').value
-            +'\nเพศ : '+gender+'\nสีที่ชอบ : '+favColor)
+            var favMusic = getFavMusicFromRadio();
+            var address = document.getElementById('address-textarea').value;
+            alert('ข้อมูลส่วนตัวของคุณมีดังนี้'+'\nชื่อ-สกุล : '+name +' '+surname
+            +'\nวัน/เดือน/ปีเกิด : '+birthdate+'\nอายุ : '+ age+'\nเพศ : '+gender+'\nสีที่ชอบ : '+favColor+'\nแนวแพลงที่ชอบ : '+favMusic+'\nที่อยู่ : '+address)
         }
     
     </script>
