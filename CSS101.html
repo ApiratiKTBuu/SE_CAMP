@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="NightStyles.css" id="styles" type="text/css"/>
+    <link rel="stylesheet" href="./NightStyles.css" id="styles" type="text/css"/>
   </head>
   <body>
     <h1>This is CSS101.html</h1>
@@ -16,14 +16,14 @@
       /*
         var backgroundImg = ["./assets/Img/BodyDayBackground.jpg","./assets/Img/BodyNightBackground.jpg"]
         var i =0;
-      */
+        */
       function changeBodyBackground(){
         $(document).ready(function(){
-        if($('link#styles').attr('href')=="NightStyles.css"){
-          $('link#styles').attr('href','DayStyles.css')
+        if($('link#styles').attr('href')=="./NightStyles.css"){
+          $('link#styles').attr('href','./DayStyles.css')
         }
         else{
-          $('link#styles').attr('href','NightStyles.css')
+          $('link#styles').attr('href','./NightStyles.css')
         }
       })
         /*
