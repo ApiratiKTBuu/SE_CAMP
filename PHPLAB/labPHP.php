@@ -7,7 +7,6 @@
 <body>
     <?php $multi_x = 2; ?>
     <h1>ตารางสูตรคูณแม่ <?php echo $multi_x ?></h1>
-    
     <div class="Multiply-table">
     <table>
            
@@ -29,6 +28,11 @@
     
         
     </table>
+            </div>
+            <div>
+                <table>
+
+                </table>
             </div>
 </body>
 
