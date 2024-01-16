@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS101</title>
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./NightStyles.css" id="styles" type="text/css"/>
+  </head>
+  <body>
+    <h1>This is CSS101.html</h1>
+    <div class="box" id="changeBackgroundBox" onclick="changeBodyBackground()">This is BOX</div>
+    <p class="normal">Normal</p>
+    <div>
+      <div>
+        <p>Div Div P</p>
+      </div>
+      <p>Div and P</p>
+    </div>
+    <script>
+      /*
+        var backgroundImg = ["./assets/Img/BodyDayBackground.jpg","./assets/Img/BodyNightBackground.jpg"]
+        var i =0;
+        */
+      function changeBodyBackground(){
+        $(document).ready(function(){
+        if($('link#styles').attr('href')=="./NightStyles.css"){
+          $('link#styles').attr('href','./DayStyles.css')
+        }
+        else{
+          $('link#styles').attr('href','./NightStyles.css')
+        }
+      })
+        /*
+          document.querySelector("body").style.backgroundImage = "url("+backgroundImg[i]+")"
+          i++;
+          if(i>1){
+            i=0;
+          }
+          */
+      }
+    </script>
+  </body>
+</html>
