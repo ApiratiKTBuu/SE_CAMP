@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\myController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +13,17 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-/*
-Route::get('/my-Controller',[myController::class,'index']);
-Route::get('/my-Controller2','C:\xampp\htdocs\SE_CAMP\example-app\app\Http\Controllers\myController@index');
-*/
+
+Route::get('/my-controller',[myController::class, 'index']);
+Route::get('/my-controller2','App\Http\Controllers\myController@index');
+Route::namespace('App\Http\Controllers')->group(function(){
+    Route::get('/my-controller3','myController@index');
+    Route::post('/my-controller3-post', 'myController@store');
+});
+Route::resource('my-controller4', myController::class);
+
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -26,7 +33,7 @@ Route::get('/my-route', function(){
     //return view('myroute');
     $data= ['val_a'=>'Hello world!'];
     $data['val_b'] = "Larravel";
-    return view('myfolder.mypage',$data);
+    return view('myfolder.myAdminpage',$data);
 });
 
 Route::post('/my-route',function(Request $req){
