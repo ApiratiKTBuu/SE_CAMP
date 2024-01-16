@@ -3,6 +3,14 @@
 @section('title','Homepage')
 
 @section('content')
+<style>
+    td,tr{
+        padding: 20px;
+    }
+    input{
+        padding: 0px;
+    }
+</style>
 <div class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
@@ -24,7 +32,7 @@
 <div class="content">
     <div class="container-fluid">
         <div class="row">
-            <div class="card card-primary">
+            <div class="card card-primary" style="margin: 0% auto">
                 <div class="card-header">
                   <h3 class="card-title">Personal Information Form</h3>
                 </div>
@@ -36,7 +44,7 @@
                     <table>
                     <tr>
                     <div class="form-group">
-                      <td><label for="firstname-input">First name</label></td>
+                      <td ><label for="firstname-input">First name</label></td>
                       <td><input type="email" class="form-control" id="firstname-input" placeholder="Enter your first name"></td>
                     </div>
 
@@ -65,13 +73,13 @@
                       <div class="form-group">
                         <td><label> Gender </label></td>
                         <br><td>
-                        <input id ="male-radio" type="radio"name="gender" value="male" onclick="clearField('etc-gender-text')"/>
-                    <label for="male-radio">male</label>
-                    <input id ="female-radio" type="radio" name="gender" value="female" onclick="clearField('etc-gender-text')"/>
-                    <label for="female-radio">female</label>
-                    <input id ="none-radio" type="radio" name="gender" value="prefer not to say" onclick="clearField('etc-gender-text')"/>
-                    <label for="none-radio">prefer not to say</label>
-                    <input id = "etc-gender-radio" type="radio" name="gender" value="etc-gender-text"/>
+                        <input id ="male-radio" type="radio"name="gender" value="male" onclick="clearField('etc-gender-text')" style="margin-left: 10px"/>
+                    <label for="male-radio">Male</label>
+                    <input id ="female-radio" type="radio" name="gender" value="female" onclick="clearField('etc-gender-text')" style="margin-left: 10px"/>
+                    <label for="female-radio">Female</label>
+                    <input id ="none-radio" type="radio" name="gender" value="prefer not to say" onclick="clearField('etc-gender-text')" style="margin-left: 10px"/>
+                    <label for="none-radio">Prefer not to say</label>
+                    <input id = "etc-gender-radio" type="radio" name="gender" value="etc-gender-text" style="margin-left: 10px"/>
                     <label for="etc-gender-radio">Other <input id="etc-gender-text" type="text" placeholder="Please specify" onclick="checkRadio('etc-gender-radio')"/></label>
                         </td></div>
                     </tr><tr>
@@ -107,11 +115,11 @@
                             <div class="form-group">
                                 <td><label >Favorite Music Genre</label></td>
                                 <td>
-                                    <input id="country-music-radio" type="radio" name="fav-music" value="country" onclick="clearField('etc-music-text')"/>
+                                    <input id="country-music-radio" type="radio" name="fav-music" value="country" onclick="clearField('etc-music-text')" style="margin-left: 10px"/>
                                     <label for="country-music-radio">Country</label>
-                                    <input id="folk-music-radio" type="radio" name="fav-music" value="folk"onclick="clearField('etc-music-text')"/>
+                                    <input id="folk-music-radio" type="radio" name="fav-music" value="folk"onclick="clearField('etc-music-text')" style="margin-left: 10px"/>
                                     <label for="folk-music-radio">Folk</label>
-                                    <input id="etc-music-radio" type="radio" name="fav-music"/>
+                                    <input id="etc-music-radio" type="radio" name="fav-music" style="margin-left: 10px"/>
                                     <label for="etc-music-radio">Other <input id="etc-music-text" type="text" placeholder="Please specify" onclick="checkRadio('etc-music-radio')"></label>
                                     </td>
                               </div></tr>
@@ -121,12 +129,12 @@
                   <!-- /.card-body -->
                     </table>
                   <div class="card-footer">
-                    <div class="form-check">
+                    <div class="form-check" style="margin: 2% 0">
                         <input type="checkbox" class="form-check-input" id="user-accepted-checkbox">
                         <label class="form-check-label" for="user-accepted-checkbox">Checking this box indicates that you have obtained consent for data collection.</label>
                       </div>
                     <button type="reset" class="btn btn-primary" id="reset-button" >reset</button>
-                    <button type="button" class="btn btn-primary" onclick="submitData()" id="submit-button" style="margin-left:145px">Submit</button>
+                    <button type="button" class="btn btn-primary" onclick="submitData()" id="submit-button" style="margin-left:35%">Submit</button>
 
                   </div>
                 </form>
@@ -198,4 +206,18 @@
     }
 
 </script>
+    <!-- jQuery -->
+<script src="{{ url('assets/plugins/jquery/jquery.min.js') }}"></script>
+<!-- Bootstrap 4 -->
+<script src="{{ url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<!-- bs-custom-file-input -->
+<script src="{{ url('assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
+<!-- AdminLTE App -->
+<script src="{{ url('assets/dist/js/adminlte.min.js') }}"></script>
+<!-- Page specific script -->
+<script>
+    $(function () {
+      bsCustomFileInput.init();
+    });
+    </script>
 @endsection
