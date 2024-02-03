@@ -26,6 +26,7 @@ class MyAuth extends Controller
             }
     }
     function logout_process(){
+        return Redirect::to('login');
 
     }
     function register_view(){

@@ -176,14 +176,39 @@
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="{{ url('assets/dist/img/user-Apirati.jpg') }}" class="img-circle elevation-2"
-                            alt="User Image">
-                    </div>
-                    <div class="info">
-                        <a href="#" class="d-block">Apirati Kottharin</a>
-                    </div>
+                    <nav class="mt-1">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                                <li class="nav-item menu-open">
+                                    <a href='#' class="nav-link">
+                                        <div class="image" style="margin-right: 3%">
+                                            <img src="{{ url('assets/dist/img/user-Apirati.jpg') }}" class="img-circle elevation-2"
+                                                alt="User Image">
+                                        </div>
+                                        <p>
+                                            Apirati Kottharin
+                                            <i class="right fas fa-angle-left" style="margin-top:2%"></i>
+
+                                        </p>
+
+                                    </a>
+
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="/logout" class="nav-link">
+                                                <p style="color: rgb(248, 51, 51);  text-decoration: underline; margin-left:75%;">logout</p>
+                                            </a>
+
+                                        </li>
+                                    </ul>
+                                </li>
+                        </ul>
+                    </nav>
                 </div>
+
+
+
+
+
 
                 <!-- SidebarSearch Form -->
                 <div class="form-inline">
@@ -200,8 +225,8 @@
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                        data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="" role="menu"
+                        data-accordion="true">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item">
@@ -215,6 +240,7 @@
                         </li>
                     </ul>
                 </nav>
+
                 <!-- /.sidebar-menu -->
             </div>
             <!-- /.sidebar -->
