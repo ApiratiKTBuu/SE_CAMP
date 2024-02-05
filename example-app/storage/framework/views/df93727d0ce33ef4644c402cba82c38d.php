@@ -1,12 +1,36 @@
-<!doctype heml>
+<!doctype html>
 <html>
     <head>
         <title>Javascript 101</title>
     </head>
     <body>
-        <h1>Javascript</h1>
+        <h1>Prepend</h1><h1 id="myh1">Javascript</h1><h1>Append</h1>
         <button onclick="alert('Hello world')">Click Me!</button>
+        <input type="text" id="my_number">
+        <button type="submit" onclick="myFunction()" >submit number</button>
+        <a href="http://www.kroobannok.com/game/full-412/เกมส์ปลูกผักแบบไทยๆ/" title="เกมส์ปลูกผักแบบไทยๆ"><img src="http://www.kroobannok.com/game/thumbnail_100x100.php?im=news_pic/p25946951313.jpg" alt="เกมส์ปลูกผักแบบไทยๆ" /></a> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script>
+            $(document).ready(function(){
+                console.log("Hello world - document.ready");
+                console.log($('#myh1').text());
+                console.log($('#my_number').val());
+                $('#myh1').text("Javascript 101");
+                $('#my_number').val(100);
+            })
+            function myFunction(){
+                let my_number = parseInt($('my_number').val());
+                for(let i = 0 ; i < my_number;i++){
+                    $('#myh1').after(`<h1 class="my_gen_number">${i}</h1>`)
+                }
+                console.log($('#my_number').val());
+                console.log(document.getElementById('my_number').value);
+                console.log("Click submit number");
+                $('my_gen_number').each(function(val){
+                   $(val).remove();
+                })
+
+            }
             console.log("Hello world")
             let myval;
             myval = '10';
@@ -38,7 +62,7 @@
                 console.log("In ForEach", value ,"Index=>",index);
             });
 
-            console.log(document.getElementByID('myh1').text);
+            console.log(document.getElementById("myh1"));
         </script>
     </body>
 </html>
