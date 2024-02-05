@@ -185,7 +185,7 @@
                                                 alt="User Image">
                                         </div>
                                         <p>
-                                            Apirati Kottharin
+                                            {{ Auth::user()->name }}
                                             <i class="right fas fa-angle-left" style="margin-top:2%"></i>
 
                                         </p>
