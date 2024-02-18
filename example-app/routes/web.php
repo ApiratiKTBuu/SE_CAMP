@@ -17,6 +17,9 @@ use  App\Http\Controllers\MyAuth;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/mul-table',function(){
+    return view('Jquery');
+});
 Route::get('/login',[MyAuth::class, 'login_view'])->name('login');
 Route::get('/register',[MyAuth::class, 'register_view']);
 Route::get('/logout',[MyAuth::class, 'logout_process']);
