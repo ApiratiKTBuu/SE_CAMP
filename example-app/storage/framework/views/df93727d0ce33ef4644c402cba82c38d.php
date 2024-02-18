@@ -8,7 +8,7 @@
         <button onclick="alert('Hello world')">Click Me!</button>
         <input type="text" id="my_number">
         <button type="submit" onclick="myFunction()" >submit number</button>
-        <a href="http://www.kroobannok.com/game/full-412/เกมส์ปลูกผักแบบไทยๆ/" title="เกมส์ปลูกผักแบบไทยๆ"><img src="http://www.kroobannok.com/game/thumbnail_100x100.php?im=news_pic/p25946951313.jpg" alt="เกมส์ปลูกผักแบบไทยๆ" /></a> 
+        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script>
             $(document).ready(function(){
