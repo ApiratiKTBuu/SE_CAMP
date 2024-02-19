@@ -42,7 +42,7 @@
             function multiplyFunction(){
                 let my_number = parseInt($('#number').val());
                 if($.isNumeric($('#number').val())){
-                let my_code_tr = `<tr><th>Mul</th><th>operator</th><th>Mul2</th><th>#</th><th>Result</th></tr>`;
+                let my_code_tr = `<tr><th>Number1</th><th>operator</th><th>Multiplicand</th><th>#</th><th>Result</th></tr>`;
 
                 for(let i = 1 ; i <= 24;i++){
                     let result = my_number * i;
