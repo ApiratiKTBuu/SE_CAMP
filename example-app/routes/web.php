@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\myController;
 use  App\Http\Controllers\C_titles;
 use  App\Http\Controllers\MyAuth;
+use App\Http\Controllers\OnlineExhibitionAuth;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,7 @@ use  App\Http\Controllers\MyAuth;
 Route::get('/mul-table',function(){
     return view('Jquery');
 });
+Route::get('/Onlogin', [OnlineExhibitionAuth::class, 'login_view']);
 Route::get('/login',[MyAuth::class, 'login_view'])->name('login');
 Route::get('/register',[MyAuth::class, 'register_view']);
 Route::get('/logout',[MyAuth::class, 'logout_process']);

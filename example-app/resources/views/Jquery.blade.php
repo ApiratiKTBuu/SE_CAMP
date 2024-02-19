@@ -18,7 +18,8 @@
             </ul>
         </div>
         <header>
-            <img src="assets/dist/img/myimg/Img_OnlineExhibition_logo.png" class="logo">
+            <img src="assets/dist/img/myimg/Img_OnlineExhibition_logo_large.png" class="logo">
+            <p class="username-header">username</p>
         <nav class="navbar">
         </nav>
         </header>

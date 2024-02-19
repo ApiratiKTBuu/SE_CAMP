@@ -21,6 +21,16 @@ header{
     margin-top: -130px;
 
 }
+.username-header{
+    margin-top: -77px;
+    margin-left: 85%;
+}
+.username-header:hover {
+    color:  #bb00ff;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
 body {
     background: #E5ECFF;
     margin: 0;
@@ -162,7 +172,11 @@ font-weight: 800;
 line-height: normal;
 }
 #Number-button:hover{
+    color:  #bb00ff;
+    transition: 0.3s;
     cursor: pointer;
+
+
 }
 #Number-button:active{
     background: #ECB7FF;
