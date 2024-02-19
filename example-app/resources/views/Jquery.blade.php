@@ -18,8 +18,8 @@
             </ul>
         </div>
         <header>
-            <img src="assets/dist/img/myimg/Img_OnlineExhibition_logo_large.png" class="logo">
-            <p class="username-header">username</p>
+            <img src="assets/dist/img/myimg/Img_OnlineExhibition_logo.png" class="logo">
+            <p class="username-header">{{ Auth::user()->name }}</p>
         <nav class="navbar">
         </nav>
         </header>

@@ -20,9 +20,9 @@ class OnlineExhibitionAuth extends Controller
         $data = $req->all();
 
         if(Auth::attempt(['email' => $data['email'], 'password' => $data['password']])){
-            return Redirect::to('titles');
+            return Redirect::to('mul-table');
             }else{
-                return Redirect::to('OnlineExhibition.login');
+                return Redirect::to('login');
             }
     }
     function logout_process(){

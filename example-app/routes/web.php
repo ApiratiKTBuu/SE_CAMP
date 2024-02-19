@@ -21,12 +21,14 @@ use App\Http\Controllers\OnlineExhibitionAuth;
 Route::get('/mul-table',function(){
     return view('Jquery');
 });
-Route::get('/Onlogin', [OnlineExhibitionAuth::class, 'login_view']);
-Route::get('/login',[MyAuth::class, 'login_view'])->name('login');
-Route::get('/register',[MyAuth::class, 'register_view']);
-Route::get('/logout',[MyAuth::class, 'logout_process']);
-Route::post('/login',[MyAuth::class, 'login_process']);
-Route::post('/register',[MyAuth::class, 'register_process']);
+Route::get('/login', [OnlineExhibitionAuth::class, 'login_view'])->name('login');
+Route::post('/login',[OnlineExhibitionAuth::class, 'login_process']);
+Route::get('/logout',[OnlineExhibitionAuth::class, 'logout_process']);
+//Route::get('/login',[MyAuth::class, 'login_view'])->name('login');
+//Route::get('/register',[MyAuth::class, 'register_view']);
+//Route::get('/logout',[MyAuth::class, 'logout_process']);
+//Route::post('/login',[MyAuth::class, 'login_process']);
+//Route::post('/register',[MyAuth::class, 'register_process']);
 
 Route::resource('titles', C_titles::class)->middleware('auth');
 
