@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 .{
-    max-width: 1440px;
+    max-width: 1400px;
+    margin: 0;
+    overflow: hidden;
+    box-sizing:border-box;
 }
 html{
     font-family: "Mulish", sans-serif;
@@ -35,7 +38,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    margin-top: 105px;
+    margin-top: 120px;
     transition: 0.3s;
 }
 .nav-links{
@@ -113,7 +116,7 @@ background: #ffffffa8;
 margin-left: 20%;
 margin-top: 130px;
 padding: 150px 10px;
-max-width: 1170px;
+max-width: 1150px;
 border-radius: 10px;
 align-items:center;
 transition: 0.5s;
@@ -121,6 +124,7 @@ transition: 0.5s;
 table{
     width: 100%;
     text-align: center;
+
 }
 tr{
     height: 70px;

@@ -23,8 +23,8 @@
         </nav>
         </header>
         <div class="table-container">
-            <input type="text" id="number" placeholder="input number">
-            <button type="submit" id="Number-button" onclick="multiplyFunction()">SUBMIT</button>
+            <input type="text" id="number" placeholder="input number" onkeyup="multiplyFunction()">
+            <button type="submit" id="Number-button" onclick="multiplyFunction()" >SUBMIT</button>
 
                 <table><br><br><br>
                     <tbody id="my_tbody">
@@ -42,7 +42,7 @@
             function multiplyFunction(){
                 let my_number = parseInt($('#number').val());
                 if($.isNumeric($('#number').val())){
-                let my_code_tr = `<tr><th>Number1</th><th>operator</th><th>Multiplicand</th><th>#</th><th>Result</th></tr>`;
+                let my_code_tr = `<tr><th>Num1</th><th>Operator</th><th>Mult</th><th>#</th><th>Res</th></tr>`;
 
                 for(let i = 1 ; i <= 24;i++){
                     let result = my_number * i;
