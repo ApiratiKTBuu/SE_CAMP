@@ -20,7 +20,7 @@ use App\Http\Controllers\OnlineExhibitionAuth;
 */
 Route::get('/mul-table',function(){
     return view('Jquery');
-});
+})->middleware('auth');
 Route::get('/login', [OnlineExhibitionAuth::class, 'login_view'])->name('login');
 Route::post('/login',[OnlineExhibitionAuth::class, 'login_process']);
 Route::get('/logout',[OnlineExhibitionAuth::class, 'logout_process']);

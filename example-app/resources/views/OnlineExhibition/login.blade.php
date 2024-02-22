@@ -23,11 +23,12 @@
             <br>
             <a href="#" class="password-reset-link">Forgot your password?</a>
         <button type="submit" class="login-button">Login</button>
-        <div class="g-signin2" data-onsuccess="onSignIn">
+        <!--<div class="g-signin2" data-onsuccess="onSignIn"> -->
         <button type="button" id="google-login-button"><i class="fa-brands fa-google"></i>      Login with Google</button>
     </div>
         </form>
         </div>
+
     </body>
     <script>
         function onSignIn(googleUser) {

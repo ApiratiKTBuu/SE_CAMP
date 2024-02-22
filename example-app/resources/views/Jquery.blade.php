@@ -19,9 +19,13 @@
         </div>
         <header>
             <img src="assets/dist/img/myimg/Img_OnlineExhibition_logo.png" class="logo">
-            <p class="username-header">{{ Auth::user()->name }}</p>
+            <p class="username-header" id="username">{{ Auth::user()->name }}</p>
         <nav class="navbar">
         </nav>
+        <div id="hamberger-menu-container">
+            <a href="#" id="menu-edit-user-data">edit user data</a><br> <a href="/logout"
+            id="menu-logout">logout</a><br><a href="#" onclick="toggleHamberger()">CLOSE</a>
+        </div>
         </header>
         <div class="table-container">
             <input type="text" id="number" placeholder="input number" onkeyup="multiplyFunction()">
@@ -35,6 +39,7 @@
             <form>
 
             </form>
+
         </div>
 
 
@@ -53,6 +58,27 @@
             }else{
                 $('#my_tbody').html(`<h1>Please Input The Number!!<h1>`)
             }
+            }
+        </script>
+        <script>
+            let IsEnableHamberger_menu = false;
+            $('#username').click(function(){
+                if(IsEnableHamberger_menu == false){$('#hamberger-menu-container').css({
+                    'display' : 'block'
+                });
+                IsEnableHamberger_menu = true;
+                }else{
+                    $('#hamberger-menu-container').css({
+                    'display' : 'none'
+                });
+                IsEnableHamberger_menu = false;
+                };
+            });
+            function toggleHamberger(){
+                    $('#hamberger-menu-container').css({
+                    'display' : 'none'
+                });
+                IsEnableHamberger_menu = false;
             }
         </script>
     </body>

@@ -23,7 +23,7 @@ header{
 }
 .username-header{
     margin-top: -77px;
-    margin-left: 85%;
+    margin-left: 80%;
 }
 .username-header:hover {
     color:  #bb00ff;
@@ -230,4 +230,52 @@ line-height: normal;
         width: 308px;
     }
 
+}
+
+.hamberger-menu-container-show{
+    margin-top: -1%;
+    margin-left: 77%;
+    width: 300px;
+height: 100px;
+border-radius: 10px;
+background: rgba(255, 255, 255, 0.89);
+box-shadow: 0px 0px 17.5px 7px #C4C4C4;
+position: fixed;
+transition: 0.5s;
+display: block;
+
+}
+.username-header:active{
+    .hamberger-menu-container{
+        display: block;
+    }
+}
+
+#hamberger-menu-container{
+    margin-top: -1%;
+    margin-left: 77%;
+    width: 300px;
+height: 100px;
+border-radius: 10px;
+background: rgba(255, 255, 255, 0.89);
+box-shadow: 0px 0px 17.5px 7px #C4C4C4;
+position: fixed;
+transition: 0.5s;
+display: none;
+
+}
+#hamberger-menu-container a{
+    text-decoration: none;
+    text-align: center;
+
+}
+#menu-edit-user-data{
+    margin-top: 10%;
+    margin-left: 20%;
+    line-height: 5%;
+}
+#menu-logout{
+    margin-top: 10%;
+    margin-left: 40%;
+    line-height: 5%;
 }
