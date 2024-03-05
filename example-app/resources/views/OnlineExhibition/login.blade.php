@@ -1,3 +1,11 @@
+<!--
+    #view-name :  view_login.blade.php
+    #view-description : display login page
+    #input : user_email, user_password
+    #output : dialog box
+    #author : Apirati Kottharin 65160365
+    #create-date : 2024-02-19
+-->
 <!doctype html>
 <html>
     <head>

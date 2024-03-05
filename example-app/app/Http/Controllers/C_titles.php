@@ -8,8 +8,9 @@ use Illuminate\Support\Facades\Redirect;
 
 class C_titles extends Controller
 {
-    /**
-     * Display a listing of the resource.
+    /*
+     * Display a listing of the resource
+     * @author :
      */
     public function index()
     {

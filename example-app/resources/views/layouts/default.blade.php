@@ -1,3 +1,7 @@
+<!--
+* default.blade.php
+* show default layouts of page
+-->
 <!DOCTYPE html>
 <html lang="en">
 
