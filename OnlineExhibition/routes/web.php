@@ -5,6 +5,7 @@ use App\Models\UserModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MajorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,9 @@ Route::get('/insert-user',function(){
     return view('create_user');
 });
 Route::post('/insert-user',[UserController::class, 'insertUser']);
+
+Route::get('/insert-major', function(){
+    return view('insert_major');
+});
+
+Route::post('/insert-major', [MajorController::class, 'insertMajor']);
