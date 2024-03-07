@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MajorController;
 use Illuminate\Support\Facades\Route;
 use App\Models\UserModel;
 use Illuminate\Http\Request;
@@ -29,3 +30,9 @@ Route::get('/insert-user',function(){
     return view('create_user');
 });
 Route::post('/insert-user',[UserController::class, 'insertUser']);
+
+Route::get('/insert-major', function(){
+    return view('insert_major');
+});
+
+Route::post('/insert-major', [MajorController::class, 'insertMajor']);
