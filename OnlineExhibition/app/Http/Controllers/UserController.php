@@ -56,4 +56,16 @@ class UserController extends Controller
         $user->save();
         return redirect('/user-list');
     }
+    public function searchUser(Request $request){
+        $search_data = $request->input('search_user');
+        $user_data = UserModel::where('user_student_id','LIKE','%'.$search_data.'%')
+        ->orWhere('user_fname','LIKE','%'.$search_data.'%')
+        ->orWhere('user_lname','LIKE','%'.$search_data.'%')
+        ->paginate(5);
+        if(!$user_data || !$user_data->count()){
+            
+        }
+        $major_data = MajorModel::all();
+        return view('user_list',['oe_users'=>$user_data, 'oe_majors'=>$major_data]);
+    }
 }
