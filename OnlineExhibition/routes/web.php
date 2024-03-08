@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MajorController;
+use App\Models\MajorModel;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +28,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/insert-user',function(){
-    return view('insert_user');
+    $major_data = MajorModel::all();
+    return view('insert_user',['oe_majors'=>$major_data]);
 });
 Route::post('/insert-user',[UserController::class, 'insertUser']);
 

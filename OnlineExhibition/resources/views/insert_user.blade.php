@@ -16,6 +16,12 @@
 <label for="user_student">Student</label>
 <input type="radio" name="user_role" id="user_guest" value="3">
 <label for="user_guest">Guest</label></br>
+<label for="user_major_id">major</label></br>
+<select name="user_major_id">
+@foreach($oe_majors as $major)
+    <option value={{$major['major_id']}}>{{$major['major_name']}}</option>
+@endforeach
+</select><br>
 <input type="submit" value="Submit">
 
 </form>

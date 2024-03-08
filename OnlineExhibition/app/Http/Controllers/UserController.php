@@ -21,7 +21,7 @@ class UserController extends Controller
         $user->user_password = Hash::make(request('user_password'));
         $user->user_role_id = (int)$request->input('user_role');
         $user->user_profile_image = "test";
-        $user->user_major_id = 1;
+        $user->user_major_id = (int)$request->input('user_major_id');
         $user->save();
         return redirect('user-list');
     }
@@ -52,7 +52,7 @@ class UserController extends Controller
         }
         $user->user_role_id = (int)$request->input('user_role');
         $user->user_profile_image = "test";
-        $user->user_major_id = 1;
+        $user->user_major_id = (int)$request->input('user_major_id');
         $user->save();
         return redirect('/user-list');
     }
