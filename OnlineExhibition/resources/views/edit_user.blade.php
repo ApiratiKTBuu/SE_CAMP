@@ -1,0 +1,22 @@
+<form action="/edit-user" method="POST">
+    @csrf
+    <input type="hidden" name="user_id" value={{$oe_users['user_id']}}>
+    <label for="user_student_id" >Student Id</label>
+    <input type="text" name="user_student_id" value={{$oe_users['user_student_id']}} ></br>
+    <label for="user_fname" >First name</label>
+    <input type="text" name="user_fname" value={{$oe_users['user_fname']}}></br>
+    <label for="user_lname">Last name</label>
+    <input type="text" name="user_lname" value={{$oe_users['user_lname']}}></br>
+    <label for="user_email">Email</label>
+    <input type="text" name="user_email" value={{$oe_users['user_email']}}></br>
+    <label for="user_password">Password</label>
+    <input type="password" name="user_password"></br>
+    <input type="radio" name="user_role" id="user_admin" value="1">
+    <label for="user_admin">Admin</label>
+    <input type="radio" name="user_role" id="user_student" value="2">
+    <label for="user_student">Student</label>
+    <input type="radio" name="user_role" id="user_guest" value="3">
+    <label for="user_guest">Guest</label></br>
+    <button type="submit" value="Submit">Update</button>
+
+    </form>

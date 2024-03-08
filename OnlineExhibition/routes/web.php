@@ -36,3 +36,8 @@ Route::get('/insert-major', function(){
 });
 
 Route::post('/insert-major',[MajorController::class, 'insertMajor']);
+
+Route::get('/user-list',[UserController::class, 'showUserList']);
+Route::get('/delete-user/{user_id}',[UserController::class, 'deleteUser']);
+Route::get('/edit-user/{user_id}',[UserController::class, 'editUser']);
+Route::post('/edit-user',[UserController::class, 'updateUser']);
