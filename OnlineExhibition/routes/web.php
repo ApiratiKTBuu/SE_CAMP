@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MajorController;
+use App\Http\Controllers\AdvisorsController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +39,11 @@ Route::get('/insert-major' , function(){
 });
 
 Route::post('/insert-major', [MajorController::class, 'insertMajor']);
+
+Route::get('/insert-advisors' , function(){
+    return view('insert_advisors');
+});
+
+Route::post('/insert-advisors', [AdvisorsController::class, 'insertAdvisors']);
+
+
