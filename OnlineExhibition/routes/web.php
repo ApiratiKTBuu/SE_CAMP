@@ -46,3 +46,6 @@ Route::post('/edit-user',[UserController::class, 'updateUser']);
 
 Route::post('/search-user',[UserController::class, 'searchUser']);
 Route::get('/search-user',[UserController::class, 'searchUser']);
+
+Route::get('/import-excel',[UserController::class, 'importExcel']);
+Route::post('/import-excel',[UserController::class, 'saveImportedExcel']);

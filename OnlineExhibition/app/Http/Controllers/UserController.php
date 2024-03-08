@@ -8,10 +8,20 @@ use Illuminate\Support\Facades\Redirect;
 use App\Models\UserModel;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\UsersImport;
 
 class UserController extends Controller
 {
-    //
+    public function importExcel(){
+        return view('import_excel');
+    }
+    public function saveImportedExcel(Request $request){
+        //$file = $request->file('file');
+        //dd($file);
+        Excel::import(new UsersImport, $request->file);
+        return redirect('/user-list');
+    }
     public function insertUser(Request $request){
         $user = new UserModel();
         $user->user_student_id = request('user_student_id');

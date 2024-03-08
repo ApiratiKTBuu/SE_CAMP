@@ -5,6 +5,7 @@
 <input type="text" name="search_user" placeholder="search here" >
 <button type="submit" name="btn_search_user">Search</button>
 </form>
+<button type="button" onclick="window.location='{{url("/import-excel")}}'" name="btn_add_excel" >Add user excel</button>
 <button type="button" onclick="window.location='{{url("/insert-user")}}'" name="btn_add_user" >Add user</button>
 
 <table border="1">
