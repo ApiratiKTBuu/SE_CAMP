@@ -6,7 +6,7 @@ use App\Models\UserModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\TagController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,3 +36,11 @@ Route::get('/insert-major', function(){
 });
 
 Route::post('/insert-major', [MajorController::class, 'insertMajor']);
+
+Route::get('/insert-tag', function(){
+    return view('insert_tag');
+});
+
+Route::post('/insert-tag', [TagController::class, 'insertTag']);
+
+
