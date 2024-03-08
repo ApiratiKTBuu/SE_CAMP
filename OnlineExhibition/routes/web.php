@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MajorController;
 use Illuminate\Support\Facades\Route;
 use App\Models\UserModel;
 use Illuminate\Http\Request;
@@ -7,9 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MajorController;
 use App\Http\Controllers\AdvisorsController;
-
-
-
+use App\Http\Controllers\TagController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,5 +44,11 @@ Route::get('/insert-advisors' , function(){
 });
 
 Route::post('/insert-advisors', [AdvisorsController::class, 'insertAdvisors']);
+
+Route::get('/insert-tag', function(){
+    return view('insert_tag');
+});
+
+Route::post('/insert-tag', [TagController::class, 'insertTag']);
 
 
