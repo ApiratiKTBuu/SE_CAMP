@@ -23,7 +23,7 @@ class UserController extends Controller
         $user->user_profile_image = "test";
         $user->user_major_id = 1;
         $user->save();
-        return view('success');
+        return redirect('user-list');
     }
     public function showUserList(){
         $user_data = UserModel::paginate(5);

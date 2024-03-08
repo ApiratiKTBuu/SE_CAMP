@@ -27,7 +27,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/insert-user',function(){
-    return view('create_user');
+    return view('insert_user');
 });
 Route::post('/insert-user',[UserController::class, 'insertUser']);
 

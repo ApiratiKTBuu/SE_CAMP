@@ -1,4 +1,5 @@
 <h1>User List</h1>
+<button type="button" onclick="window.location='{{url("/insert-user")}}'">Add user</button>
 <table border="1">
     <tr>
         <td>ID</td>
@@ -28,8 +29,11 @@
             }
         }
         ?>
-        <td><a href={{"/delete-user/".$user['user_id']}}>Delete</a></td>
-        <td><a href={{"/edit-user/".$user['user_id']}}>Edit</a></td>
+        <td>
+            <a href={{"/edit-user/".$user['user_id']}}>Edit</a>
+            <a href={{"/delete-user/".$user['user_id']}}>Delete</a>
+        </td>
+
     </tr>
     @endforeach
 </table>
