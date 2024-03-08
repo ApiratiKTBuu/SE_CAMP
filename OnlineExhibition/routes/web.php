@@ -43,3 +43,4 @@ Route::get('/edit-user/{user_id}',[UserController::class, 'editUser']);
 Route::post('/edit-user',[UserController::class, 'updateUser']);
 
 Route::post('/search-user',[UserController::class, 'searchUser']);
+Route::get('/search-user',[UserController::class, 'searchUser']);

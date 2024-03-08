@@ -45,7 +45,7 @@
     @endforeach
 </table>
 <span>
-    {{$oe_users->links()}}
+    {{$oe_users->appends(request()->input())->links()}}
 </span>
 
 <style>

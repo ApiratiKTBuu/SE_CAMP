@@ -63,7 +63,7 @@ class UserController extends Controller
         ->orWhere('user_lname','LIKE','%'.$search_data.'%')
         ->paginate(5);
         if(!$user_data || !$user_data->count()){
-            
+            return redirect('/user-list');
         }
         $major_data = MajorModel::all();
         return view('user_list',['oe_users'=>$user_data, 'oe_majors'=>$major_data]);
