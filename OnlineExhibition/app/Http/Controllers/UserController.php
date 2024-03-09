@@ -17,9 +17,10 @@ class UserController extends Controller
         return view('import_excel');
     }
     public function saveImportedExcel(Request $request){
-        //$file = $request->file('file');
+        $file = $request->file('file');
         //dd($file);
-        Excel::import(new UsersImport, $request->file);
+        //Excel::import(new UsersImport, $request->file);
+        (new UsersImport)->import($file);
         return redirect('/user-list');
     }
     public function insertUser(Request $request){
