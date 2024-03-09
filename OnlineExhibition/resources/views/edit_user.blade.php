@@ -23,6 +23,6 @@
             <option value={{$major['major_id']}}>{{$major['major_name']}}</option>
         @endforeach
         </select><br>
-    <button type="submit" value="Submit">Update</button>
+    <button type="submit" value="Submit" >Update</button>
 
     </form>
