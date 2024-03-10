@@ -52,12 +52,6 @@ Route::get('/search-user',[UserController::class, 'searchUser']);
 Route::get('/import-excel',[UserController::class, 'importExcel']);
 Route::post('/import-excel',[UserController::class, 'saveImportedExcel']);
 
-Route::get('/insert-major', function(){
-    return view('insert_major');
-});
-
-Route::post('/insert-major', [MajorController::class, 'insertMajor']);
-
 Route::get('/insert-tag', function(){
     return view('insert_tag');
 });
