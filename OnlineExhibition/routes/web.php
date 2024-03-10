@@ -6,7 +6,6 @@ use App\Models\UserModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\MajorController;
 use App\Models\MajorModel;
 
 use App\Http\Controllers\TagController;
