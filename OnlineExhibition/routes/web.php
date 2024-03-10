@@ -6,9 +6,7 @@ use App\Models\UserModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\MajorController;
 use App\Http\Controllers\CompanyController;
-
 use App\Models\MajorModel;
 use App\Http\Controllers\AdvisorsController;
 use App\Http\Controllers\TagController;
@@ -36,20 +34,6 @@ Route::get('/insert-user',function(){
     return view('insert_user',['oe_majors'=>$major_data]);
 });
 Route::post('/insert-user',[UserController::class, 'insertUser']);
-
-Route::get('/insert-major', function(){
-    return view('insert_major');
-});
-
-Route::post('/insert-major',[MajorController::class, 'insertMajor']);
-
-Route::get('/insert-company', function(){
-    return view('insert_company');
-});
-
-Route::post('/insert-company',[CompanyController::class, 'insertCompany']);
-
-
 Route::get('/user-list',[UserController::class, 'showUserList']);
 Route::get('/delete-user/{user_id}',[UserController::class, 'deleteUser']);
 Route::get('/edit-user/{user_id}',[UserController::class, 'editUser']);
@@ -69,4 +53,15 @@ Route::get('/insert-tag', function(){
 });
 Route::post('/insert-tag', [TagController::class, 'insertTag']);
 
+Route::get('/insert-major', function(){
+    return view('insert_major');
+});
+
+Route::post('/insert-major',[MajorController::class, 'insertMajor']);
+
+Route::get('/insert-company', function(){
+    return view('insert_company');
+});
+
+Route::post('/insert-company',[CompanyController::class, 'insertCompany']);
 
