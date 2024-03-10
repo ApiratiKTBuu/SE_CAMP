@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MajorController;
 use Illuminate\Support\Facades\Route;
 use App\Models\UserModel;
 use Illuminate\Http\Request;
@@ -8,6 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\MajorController;
 use App\Models\MajorModel;
 
+use App\Http\Controllers\TagController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,3 +51,17 @@ Route::get('/search-user',[UserController::class, 'searchUser']);
 
 Route::get('/import-excel',[UserController::class, 'importExcel']);
 Route::post('/import-excel',[UserController::class, 'saveImportedExcel']);
+
+Route::get('/insert-major', function(){
+    return view('insert_major');
+});
+
+Route::post('/insert-major', [MajorController::class, 'insertMajor']);
+
+Route::get('/insert-tag', function(){
+    return view('insert_tag');
+});
+
+Route::post('/insert-tag', [TagController::class, 'insertTag']);
+
+
