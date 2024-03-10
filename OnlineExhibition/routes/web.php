@@ -5,6 +5,8 @@ use App\Models\UserModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MajorController;
+use App\Models\MajorModel;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +28,24 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/insert-user',function(){
-    return view('create_user');
+    $major_data = MajorModel::all();
+    return view('insert_user',['oe_majors'=>$major_data]);
 });
 Route::post('/insert-user',[UserController::class, 'insertUser']);
+
+Route::get('/insert-major', function(){
+    return view('insert_major');
+});
+
+Route::post('/insert-major',[MajorController::class, 'insertMajor']);
+
+Route::get('/user-list',[UserController::class, 'showUserList']);
+Route::get('/delete-user/{user_id}',[UserController::class, 'deleteUser']);
+Route::get('/edit-user/{user_id}',[UserController::class, 'editUser']);
+Route::post('/edit-user',[UserController::class, 'updateUser']);
+
+Route::post('/search-user',[UserController::class, 'searchUser']);
+Route::get('/search-user',[UserController::class, 'searchUser']);
+
+Route::get('/import-excel',[UserController::class, 'importExcel']);
+Route::post('/import-excel',[UserController::class, 'saveImportedExcel']);
