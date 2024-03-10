@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\UserController;
 use App\Models\MajorModel;
-
-use App\Http\Controllers\MajorController;
 use App\Http\Controllers\AdvisorsController;
 use App\Http\Controllers\TagController;
 /*
@@ -46,24 +44,19 @@ Route::get('/user-list',[UserController::class, 'showUserList']);
 Route::get('/delete-user/{user_id}',[UserController::class, 'deleteUser']);
 Route::get('/edit-user/{user_id}',[UserController::class, 'editUser']);
 Route::post('/edit-user',[UserController::class, 'updateUser']);
-
 Route::post('/search-user',[UserController::class, 'searchUser']);
 Route::get('/search-user',[UserController::class, 'searchUser']);
-
 Route::get('/import-excel',[UserController::class, 'importExcel']);
 Route::post('/import-excel',[UserController::class, 'saveImportedExcel']);
-Route::post('/insert-major', [MajorController::class, 'insertMajor']);
 
 Route::get('/insert-advisors' , function(){
     return view('insert_advisors');
 });
-
 Route::post('/insert-advisors', [AdvisorsController::class, 'insertAdvisors']);
 
 Route::get('/insert-tag', function(){
     return view('insert_tag');
 });
-
 Route::post('/insert-tag', [TagController::class, 'insertTag']);
 
 
