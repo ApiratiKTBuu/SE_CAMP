@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\UserController;
 use App\Models\MajorModel;
 
+use App\Http\Controllers\MajorController;
+use App\Http\Controllers\AdvisorsController;
 use App\Http\Controllers\TagController;
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +36,7 @@ Route::get('/insert-user',function(){
 });
 Route::post('/insert-user',[UserController::class, 'insertUser']);
 
-Route::get('/insert-major', function(){
+Route::get('/insert-major' , function(){
     return view('insert_major');
 });
 
@@ -50,6 +52,13 @@ Route::get('/search-user',[UserController::class, 'searchUser']);
 
 Route::get('/import-excel',[UserController::class, 'importExcel']);
 Route::post('/import-excel',[UserController::class, 'saveImportedExcel']);
+Route::post('/insert-major', [MajorController::class, 'insertMajor']);
+
+Route::get('/insert-advisors' , function(){
+    return view('insert_advisors');
+});
+
+Route::post('/insert-advisors', [AdvisorsController::class, 'insertAdvisors']);
 
 Route::get('/insert-tag', function(){
     return view('insert_tag');
