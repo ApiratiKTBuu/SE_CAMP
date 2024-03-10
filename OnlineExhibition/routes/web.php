@@ -6,8 +6,6 @@ use App\Models\UserModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\MajorController;
-
 use App\Models\MajorModel;
 use App\Http\Controllers\AdvisorsController;
 use App\Http\Controllers\TagController;
@@ -42,11 +40,6 @@ Route::get('/insert-major', function(){
 
 Route::post('/insert-major',[MajorController::class, 'insertMajor']);
 
-Route::get('/insert-major' , function(){
-    return view('insert_major');
-});
-
-Route::post('/insert-major',[MajorController::class, 'insertMajor']);
 
 Route::get('/user-list',[UserController::class, 'showUserList']);
 Route::get('/delete-user/{user_id}',[UserController::class, 'deleteUser']);
