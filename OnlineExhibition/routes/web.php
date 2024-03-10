@@ -6,6 +6,9 @@ use App\Models\UserModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MajorController;
+use App\Http\Controllers\CompanyController;
+
 use App\Models\MajorModel;
 use App\Http\Controllers\AdvisorsController;
 use App\Http\Controllers\TagController;
@@ -39,6 +42,12 @@ Route::get('/insert-major', function(){
 });
 
 Route::post('/insert-major',[MajorController::class, 'insertMajor']);
+
+Route::get('/insert-company', function(){
+    return view('insert_company');
+});
+
+Route::post('/insert-company',[CompanyController::class, 'insertCompany']);
 
 
 Route::get('/user-list',[UserController::class, 'showUserList']);
